@@ -1,21 +1,29 @@
 "use client";
 
-import ReactGA from "react-ga4";
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-
-export function initAnalytics() {
-  if (GA_ID && typeof window !== "undefined") {
-    ReactGA.initialize(GA_ID, {
-      testMode: process.env.NODE_ENV === "development",
-    });
+// Google Tag Manager dataLayer helper functions
+declare global {
+  interface Window {
+    dataLayer: any[];
   }
 }
 
-export function trackPageView(path: string) {
-  if (GA_ID && typeof window !== "undefined") {
-    ReactGA.send({ hitType: "pageview", page: path });
+function pushToDataLayer(data: any) {
+  if (typeof window !== "undefined" && window.dataLayer) {
+    window.dataLayer.push(data);
   }
+}
+
+export function initAnalytics() {
+  // GTM initializes automatically, no manual initialization needed
+  // This function is kept for compatibility but does nothing
+}
+
+export function trackPageView(path: string) {
+  pushToDataLayer({
+    event: "page_view",
+    page_path: path,
+    page_title: document.title,
+  });
 }
 
 export function trackEvent(
@@ -24,32 +32,56 @@ export function trackEvent(
   label?: string,
   value?: number
 ) {
-  if (GA_ID && typeof window !== "undefined") {
-    ReactGA.event({
-      category,
-      action,
-      label,
-      value,
-    });
-  }
+  pushToDataLayer({
+    event: "custom_event",
+    event_category: category,
+    event_action: action,
+    event_label: label,
+    value: value,
+  });
 }
 
 export function trackResumeDownload() {
-  trackEvent("Resume", "Download", "ATS Resume PDF");
+  pushToDataLayer({
+    event: "resume_download",
+    event_category: "Resume",
+    event_action: "Download",
+    event_label: "ATS Resume PDF",
+  });
 }
 
 export function trackProjectView(projectName: string) {
-  trackEvent("Project", "View", projectName);
+  pushToDataLayer({
+    event: "project_view",
+    event_category: "Project",
+    event_action: "View",
+    event_label: projectName,
+  });
 }
 
 export function trackContactFormSubmission(success: boolean) {
-  trackEvent("Contact", success ? "Submit Success" : "Submit Error");
+  pushToDataLayer({
+    event: "contact_form_submission",
+    event_category: "Contact",
+    event_action: success ? "Submit Success" : "Submit Error",
+  });
 }
 
 export function trackExternalLink(url: string, platform: string) {
-  trackEvent("External Link", "Click", platform, undefined);
+  pushToDataLayer({
+    event: "external_link_click",
+    event_category: "External Link",
+    event_action: "Click",
+    event_label: platform,
+    link_url: url,
+  });
 }
 
 export function trackGitHubVisit(repoName: string) {
-  trackEvent("GitHub", "Repository Visit", repoName);
+  pushToDataLayer({
+    event: "github_visit",
+    event_category: "GitHub",
+    event_action: "Repository Visit",
+    event_label: repoName,
+  });
 }

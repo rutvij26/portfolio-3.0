@@ -8,7 +8,7 @@ A modern, secure, and job-optimized personal portfolio website built with Next.j
 - **ATS-Friendly Resume**: Automatically generated PDF resume optimized for applicant tracking systems
 - **GitHub Integration**: Curated project showcase from your GitHub repositories
 - **Security**: Comprehensive security measures including rate limiting, spam protection, and input sanitization
-- **Analytics**: Google Analytics 4 integration for tracking
+- **Analytics**: Google Tag Manager integration for tracking
 - **SEO Optimized**: Full metadata, Open Graph, and structured data support
 - **Responsive**: Fully responsive design for all devices
 
@@ -20,39 +20,42 @@ A modern, secure, and job-optimized personal portfolio website built with Next.j
 - **Font**: Roboto (Google Fonts)
 - **PDF Generation**: @react-pdf/renderer
 - **Email**: Resend API
-- **Analytics**: Google Analytics 4
+- **Analytics**: Google Tag Manager
 - **Security**: reCAPTCHA v3, rate limiting, input sanitization
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 - GitHub account (for project fetching)
 - Resend account (for contact form)
-- Google Analytics account (optional)
+- Google Tag Manager account (for analytics)
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd portfolio-3.0
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create a `.env.local` file:
+
 ```env
 GITHUB_USERNAME=rutvij26
 GITHUB_TOKEN=optional
 CONTACT_EMAIL=contact@rutvijsathe.dev
 RESEND_API_KEY=required
-NEXT_PUBLIC_GA_ID=required
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 RECAPTCHA_SECRET_KEY=optional
 NEXT_PUBLIC_RECAPTCHA_SITE_KEY=optional
 KV_REST_API_URL=optional
@@ -62,6 +65,7 @@ NODE_ENV=production
 ```
 
 4. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -75,7 +79,7 @@ npm run dev
 - `GITHUB_USERNAME`: Your GitHub username
 - `CONTACT_EMAIL`: Email address for contact form submissions
 - `RESEND_API_KEY`: Resend API key for sending emails
-- `NEXT_PUBLIC_GA_ID`: Google Analytics Measurement ID
+- `NEXT_PUBLIC_GTM_ID`: Google Tag Manager Container ID
 
 ### Optional
 
@@ -97,6 +101,7 @@ npm run dev
 5. Deploy!
 
 Vercel will automatically:
+
 - Build and deploy on every push
 - Provide SSL/HTTPS
 - Handle CDN and caching
@@ -104,6 +109,7 @@ Vercel will automatically:
 ### Other Platforms
 
 The app can be deployed to any platform that supports Next.js:
+
 - Netlify
 - AWS Amplify
 - Railway
@@ -120,13 +126,14 @@ The app can be deployed to any platform that supports Next.js:
 5. Create a new API key
 6. Copy and add to environment variables as `RESEND_API_KEY`
 
-### Google Analytics Setup
+### Google Tag Manager Setup
 
-1. Go to [https://analytics.google.com](https://analytics.google.com)
+1. Go to [https://tagmanager.google.com](https://tagmanager.google.com)
 2. Sign in with your Google account
-3. Create a new property for "rutvijsathe.dev"
-4. Get your Measurement ID (format: G-XXXXXXXXXX)
-5. Add to environment variables as `NEXT_PUBLIC_GA_ID`
+3. Create a new container or use an existing one
+4. Get your Container ID (format: GTM-XXXXXXX)
+5. Add to environment variables as `NEXT_PUBLIC_GTM_ID`
+6. Configure your tags in GTM (e.g., Google Analytics 4, conversion tracking, etc.)
 
 ### reCAPTCHA v3 Setup
 
@@ -184,6 +191,7 @@ portfolio-3.0/
 ### Updating Content
 
 Edit `lib/data.ts` to update:
+
 - Contact information
 - Professional summary
 - Experience entries
@@ -212,9 +220,8 @@ Projects are automatically fetched from GitHub. To manually override or add proj
 
 ## License
 
-MIT
+See [LICENSE](LICENSE) file for details. This project uses a custom license that requires attribution and restricts commercial use without permission.
 
 ## Contact
 
 For questions or issues, please open an issue on GitHub or contact [rut26sathe@gmail.com](mailto:rut26sathe@gmail.com).
-
