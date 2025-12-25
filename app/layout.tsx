@@ -7,6 +7,7 @@ import {
   GoogleTagManager,
   GoogleTagManagerNoscript,
 } from "@/components/GoogleTagManager";
+import { StructuredData } from "@/components/StructuredData";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -21,13 +22,20 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Rutvij Sathe, Software Engineer II at American Express. Full Stack Developer specializing in React.js, Next.js, Node.js, and AdonisJS.",
   keywords: [
+    "Rutvij Sathe",
     "Software Engineer",
     "Full Stack Developer",
     "React",
     "Next.js",
     "Node.js",
     "TypeScript",
+    "AdonisJS",
+    "American Express",
+    "Toronto Software Engineer",
     "Portfolio",
+    "Web Developer",
+    "Backend Developer",
+    "Frontend Developer",
   ],
   authors: [{ name: "Rutvij Sathe" }],
   creator: "Rutvij Sathe",
@@ -87,6 +95,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <GoogleTagManager />
+        <StructuredData />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.svg" />

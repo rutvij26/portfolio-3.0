@@ -1,0 +1,23 @@
+{
+  "name": "Rutvij Sathe - Software Engineer",
+  "short_name": "Rutvij Sathe",
+  "description": "Portfolio of Rutvij Sathe, Software Engineer II at American Express. Full Stack Developer specializing in React.js, Next.js, Node.js, and AdonisJS.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
