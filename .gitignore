@@ -35,3 +35,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# PDF files
+*.pdf
+
+# Images (add specific ones to ignore)
+Overcoat image.PNG
+
