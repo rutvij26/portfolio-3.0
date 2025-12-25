@@ -1,5 +1,5 @@
-import { Navbar } from '@/components/Navbar';
-import { testimonials } from '@/lib/data';
+import { Navbar } from "@/components/Navbar";
+import { testimonials } from "@/lib/data";
 
 export default function TestimonialsPage() {
   return (
@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
                   className="p-4 sm:p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
                 >
                   <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4 italic">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
@@ -64,4 +64,3 @@ export default function TestimonialsPage() {
     </>
   );
 }
-

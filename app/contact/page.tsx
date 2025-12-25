@@ -1,7 +1,7 @@
-import { Navbar } from '@/components/Navbar';
-import { ResumeDownload } from '@/components/ResumeDownload';
-import { ContactForm } from '@/components/ContactForm';
-import { contactInfo } from '@/lib/data';
+import { Navbar } from "@/components/Navbar";
+import { ResumeDownload } from "@/components/ResumeDownload";
+import { ContactForm } from "@/components/ContactForm";
+import { contactInfo } from "@/lib/data";
 
 export default function ContactPage() {
   return (
@@ -14,7 +14,7 @@ export default function ContactPage() {
               Contact
             </h1>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400">
-              Let's connect and discuss opportunities
+              Let&apos;s connect and discuss opportunities
             </p>
           </div>
 
@@ -89,4 +89,3 @@ export default function ContactPage() {
     </>
   );
 }
-

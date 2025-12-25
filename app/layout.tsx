@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "Portfolio of Rutvij Sathe, Software Engineer II at American Express",
     images: [
       {
-        url: "/og-image.png",
+        url: "/api/og?title=Rutvij%20Sathe&description=Software%20Engineer%20II%20%40%20American%20Express",
         width: 1200,
         height: 630,
         alt: "Rutvij Sathe - Software Engineer",
@@ -58,7 +58,9 @@ export const metadata: Metadata = {
     title: "Rutvij Sathe - Software Engineer",
     description:
       "Portfolio of Rutvij Sathe, Software Engineer II at American Express",
-    images: ["/og-image.png"],
+    images: [
+      "/api/og?title=Rutvij%20Sathe&description=Software%20Engineer%20II%20%40%20American%20Express",
+    ],
   },
   robots: {
     index: true,
@@ -85,8 +87,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <GoogleTagManager />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${roboto.variable} font-sans antialiased`}>

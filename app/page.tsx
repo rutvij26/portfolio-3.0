@@ -1,9 +1,15 @@
-import Link from 'next/link';
-import { Navbar } from '@/components/Navbar';
-import { ResumeDownload } from '@/components/ResumeDownload';
-import { contactInfo, professionalSummary, whyICode, currentLearning, featuredEngineeringFocus } from '@/lib/data';
-import { getFeaturedProjects } from '@/lib/github';
-import { ProjectCard } from '@/components/ProjectCard';
+import Link from "next/link";
+import { Navbar } from "@/components/Navbar";
+import { ResumeDownload } from "@/components/ResumeDownload";
+import {
+  contactInfo,
+  professionalSummary,
+  whyICode,
+  currentLearning,
+  featuredEngineeringFocus,
+} from "@/lib/data";
+import { getFeaturedProjects } from "@/lib/github";
+import { ProjectCard } from "@/components/ProjectCard";
 
 export default async function Home() {
   const featuredProjects = await getFeaturedProjects();
@@ -41,7 +47,9 @@ export default async function Home() {
 
         {/* Why I Code */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">Why I Code</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Why I Code
+          </h2>
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             {whyICode}
           </p>
@@ -49,7 +57,9 @@ export default async function Home() {
 
         {/* Current Learning */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">Currently Learning</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Currently Learning
+          </h2>
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
             {currentLearning}
           </p>
@@ -57,7 +67,9 @@ export default async function Home() {
 
         {/* Featured Engineering Focus */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Core Strengths</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
+            Core Strengths
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {featuredEngineeringFocus.map((focus, index) => (
               <div
@@ -79,7 +91,9 @@ export default async function Home() {
         {/* Featured Projects */}
         {featuredProjects.length > 0 && (
           <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Featured Projects</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
+              Featured Projects
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {featuredProjects.map((project) => (
                 <ProjectCard key={project.id} project={project} />
@@ -100,10 +114,11 @@ export default async function Home() {
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 sm:p-8 text-center">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Let's Connect
+              Let&apos;s Connect
             </h2>
             <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-6">
-              Interested in collaborating or have a question? I'd love to hear from you.
+              Interested in collaborating or have a question? I&apos;d love to
+              hear from you.
             </p>
             <Link
               href="/contact"
@@ -117,4 +132,3 @@ export default async function Home() {
     </>
   );
 }
-
