@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@/components/Analytics";
 import { ReCaptchaProvider } from "@/components/ReCaptchaProvider";
@@ -107,6 +108,7 @@ export default function RootLayout({
           <ReCaptchaProvider>
             {children}
             <Analytics />
+            <VercelAnalytics />
           </ReCaptchaProvider>
         </ThemeProvider>
       </body>
