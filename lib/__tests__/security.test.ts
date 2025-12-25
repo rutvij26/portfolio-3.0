@@ -58,38 +58,36 @@ describe("Security Utilities", () => {
 
   describe("getClientIP", () => {
     it("should extract IP from x-forwarded-for header", () => {
-      const request = new Request("https://example.com", {
-        headers: {
-          "x-forwarded-for": "192.168.1.1, 10.0.0.1",
-        },
+      const headers = new Headers({
+        "x-forwarded-for": "192.168.1.1, 10.0.0.1",
       });
+      const request = { headers } as any;
 
       expect(getClientIP(request)).toBe("192.168.1.1");
     });
 
     it("should extract IP from x-real-ip header", () => {
-      const request = new Request("https://example.com", {
-        headers: {
-          "x-real-ip": "192.168.1.1",
-        },
+      const headers = new Headers({
+        "x-real-ip": "192.168.1.1",
       });
+      const request = { headers } as any;
 
       expect(getClientIP(request)).toBe("192.168.1.1");
     });
 
     it("should prefer x-forwarded-for over x-real-ip", () => {
-      const request = new Request("https://example.com", {
-        headers: {
-          "x-forwarded-for": "192.168.1.1",
-          "x-real-ip": "10.0.0.1",
-        },
+      const headers = new Headers({
+        "x-forwarded-for": "192.168.1.1",
+        "x-real-ip": "10.0.0.1",
       });
+      const request = { headers } as any;
 
       expect(getClientIP(request)).toBe("192.168.1.1");
     });
 
     it("should return unknown when no IP headers present", () => {
-      const request = new Request("https://example.com");
+      const headers = new Headers();
+      const request = { headers } as any;
       expect(getClientIP(request)).toBe("unknown");
     });
   });

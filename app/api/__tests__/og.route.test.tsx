@@ -1,5 +1,4 @@
 import { GET } from '../og/route';
-import { NextRequest } from 'next/server';
 import { ImageResponse } from '@vercel/og';
 
 jest.mock('@vercel/og', () => ({
@@ -9,8 +8,19 @@ jest.mock('@vercel/og', () => ({
   })),
 }));
 
+// Mock NextRequest
+jest.mock('next/server', () => ({
+  NextRequest: class NextRequest {
+    url: string;
+    constructor(input: string) {
+      this.url = input;
+    }
+  },
+}));
+
 describe('GET /api/og', () => {
   it('should generate OG image with default values', async () => {
+    const { NextRequest } = require('next/server');
     const request = new NextRequest('http://localhost/api/og');
     await GET(request);
 
@@ -18,6 +28,7 @@ describe('GET /api/og', () => {
   });
 
   it('should use custom title and description from query params', async () => {
+    const { NextRequest } = require('next/server');
     const request = new NextRequest('http://localhost/api/og?title=Test&description=Test Desc');
     await GET(request);
 
@@ -29,6 +40,7 @@ describe('GET /api/og', () => {
       throw new Error('Failed');
     });
 
+    const { NextRequest } = require('next/server');
     const request = new NextRequest('http://localhost/api/og');
     const response = await GET(request);
 

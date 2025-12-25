@@ -9,7 +9,7 @@ describe("BlogPage", () => {
   it("should render blog page with coming soon message", () => {
     render(<BlogPage />);
     expect(
-      screen.getByText(/coming soon/i)
+      screen.getByText(/Blog posts will be displayed here once published/i)
     ).toBeInTheDocument();
   });
 });

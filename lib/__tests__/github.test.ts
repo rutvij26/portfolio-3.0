@@ -1,10 +1,21 @@
-import { fetchGitHubProjects, getFeaturedProjects } from '../github';
 import { Project } from '@/types';
 
 // Mock fetch
 global.fetch = jest.fn();
 
 const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
+
+// Mock the github module
+jest.mock('../github', () => {
+  const actual = jest.requireActual('../github');
+  return {
+    ...actual,
+    fetchGitHubProjects: jest.fn(),
+  };
+});
+
+// Import after mock
+const { fetchGitHubProjects, getFeaturedProjects } = require('../github');
 
 describe('GitHub Utilities', () => {
   beforeEach(() => {
@@ -94,13 +105,10 @@ describe('GitHub Utilities', () => {
       },
     ];
 
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: async () => [],
-    } as Response);
-
-    // Mock the fetchGitHubProjects to return our mock projects
-    jest.spyOn(require('../github'), 'fetchGitHubProjects').mockResolvedValue(mockProjects);
+    // Get the mocked fetchGitHubProjects
+    const githubModule = jest.requireMock('../github');
+    const mockFetchGitHubProjects = githubModule.fetchGitHubProjects as jest.MockedFunction<any>;
+    mockFetchGitHubProjects.mockResolvedValue(mockProjects);
 
     const featured = await getFeaturedProjects();
     expect(featured.length).toBe(1);

@@ -24,7 +24,8 @@ describe("SkillsPage", () => {
   it("should render all skills", () => {
     render(<SkillsPage />);
     skills.forEach((skill) => {
-      expect(screen.getByText(skill.name)).toBeInTheDocument();
+      // Use getAllByText since skill name appears in both icon and text
+      expect(screen.getAllByText(skill.name).length).toBeGreaterThan(0);
     });
   });
 

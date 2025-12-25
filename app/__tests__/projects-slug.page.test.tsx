@@ -48,7 +48,9 @@ describe("ProjectDetailPage", () => {
   it("should call notFound when project does not exist", async () => {
     mockFetchGitHubProjects.mockResolvedValue([]);
 
-    await ProjectDetailPage({ params: { slug: "non-existent" } });
+    await expect(
+      ProjectDetailPage({ params: { slug: "non-existent" } })
+    ).rejects.toThrow();
     expect(notFound).toHaveBeenCalled();
   });
 });

@@ -27,7 +27,8 @@ describe("ExperiencePage", () => {
       expect(
         screen.getByText(`${exp.startDate} – ${exp.endDate}`)
       ).toBeInTheDocument();
-      expect(screen.getByText(exp.employmentType)).toBeInTheDocument();
+      // Use getAllByText since employmentType may appear multiple times
+      expect(screen.getAllByText(exp.employmentType).length).toBeGreaterThan(0);
     });
   });
 

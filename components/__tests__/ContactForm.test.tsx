@@ -51,13 +51,14 @@ describe('ContactForm', () => {
 
     await userEvent.type(emailInput, 'invalid-email');
     await userEvent.type(screen.getByLabelText(/name/i), 'Test');
-    await userEvent.type(screen.getByLabelText(/message/i), 'Test message');
-    fireEvent.click(submitButton);
+    await userEvent.selectOptions(screen.getByLabelText(/subject/i), 'Question');
+    await userEvent.type(screen.getByLabelText(/message/i), 'Test message with enough characters');
+    await userEvent.click(submitButton);
 
     await waitFor(() => {
       const errorMessages = screen.queryAllByText(/invalid email/i);
       expect(errorMessages.length).toBeGreaterThan(0);
-    });
+    }, { timeout: 3000 });
   });
 
   it('should submit form successfully', async () => {

@@ -13,7 +13,7 @@ describe("ResumePage", () => {
 
   it("should render resume iframe", () => {
     render(<ResumePage />);
-    const iframe = screen.getByTitle("Resume PDF");
+    const iframe = screen.getByTitle("Resume Preview");
     expect(iframe).toBeInTheDocument();
     expect(iframe).toHaveAttribute("src", "/api/resume");
   });
