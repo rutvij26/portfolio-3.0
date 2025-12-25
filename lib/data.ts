@@ -557,8 +557,69 @@ export const softSkills = [
 ];
 
 export const testimonials: Testimonial[] = [
-  // Placeholder - to be filled from LinkedIn recommendations
-  // Structure: { name, role, company, text, date, linkedinUrl? }
+  {
+    name: "Arjun TP",
+    role: "Full Stack Engineer",
+    company: "Viral Nation",
+    text: "I am thrilled to recommend Rutvij as a full stack developer with exceptional logical thinking and top-notch problem-solving abilities. Throughout our collaboration, I have been continually impressed by Rutvij's technical prowess and his ability to tackle complex challenges with ease. Rutvij's logical thinking sets him apart as a full stack developer. He has a remarkable knack for breaking down problems into manageable components and devising elegant solutions that demonstrate both creativity and efficiency. His approach to problem-solving is methodical and thorough, ensuring that every aspect of a project is meticulously addressed. As a teammate, Rutvij is an absolute pleasure to work with. He brings a positive attitude and a collaborative spirit to every task, fostering an environment where ideas are freely exchanged, and teamwork thrives.",
+    date: "May 2024",
+  },
+  {
+    name: "Paula Melero Ramírez",
+    role: "Software Engineer",
+    company: "Viral Nation",
+    text: "Rutvij is a top-tier full-stack developer. He was always the first person to provide assistance when I had a TypeScript question or needed a second pair of eyes to debug a problem. During code reviews, Rutvij quickly offered meaningful suggestions to improve the performance and readability of the codebase, always doing so in a respectful and humble manner. One of the things that really impressed me about Rutvij is how quickly he adapted to our new team. He mastered a new backend framework, delivered results in record time, and proactively reached out to team members needing assistance, helping to maintain the team's momentum. I truly believe any team would be fortunate to have Rutvij as a member.",
+    date: "May 2024",
+  },
+  {
+    name: "Manpreet Singh Sarao",
+    role: "Senior Software Engineer",
+    company: "Viral Nation",
+    text: "I am pleased to recommend Rutvij Sathe for any software engineering role. Having worked with him on multiple applications, I can attest to his exceptional technical skills and collaborative spirit. Rutvij is a highly skilled developer with extensive experience in modern tech stacks. His expertise in building and optimizing backend architecture, along with writing clean and efficient code, is impressive. He quickly learns new technologies and consistently provides valuable guidance on coding challenges and performance optimizations. Rutvij excels in communication and teamwork, fostering a productive and innovative environment. His commitment to continuous learning and staying updated with industry advancements is commendable.",
+    date: "May 2024",
+  },
+  {
+    name: "Mahmoud Mraisi",
+    role: "Senior Software Engineer",
+    company: "Viral Nation",
+    text: "I had the pleasure of working with Rutvij Sathe at Viral Nation. During this time, he demonstrated exceptional skills in social data and API development. Rutvij's technical expertise in building and optimizing backend architecture is impressive and noteworthy. Rutvij is a talented problem-solver with strong coding skills and a collaborative spirit. His innovative approach to backend services and teamwork consistently led to successful project outcomes. I highly recommend Rutvij for any software engineering role. His technical skills, problem-solving abilities, and dedication make him a valuable asset to any team.",
+    date: "May 2024",
+  },
+  {
+    name: "Kaushal Luffa",
+    role: "Intermediate Software Engineer",
+    company: "Viral Nation",
+    text: "Rutvij was the person who taught me how to learn new things fast. He is best in class developer with experience in almost all modern tech stack. I remember anytime i had a problem with my code or if i wanted a performance optimization review on my code i couldnt think of anyone but him. He always suggested and directed me towards the best possible method to do it. I would recommend him because he is an awesome developer, a teammate and also if you want someone who can adapt to new stack or even upgrade and improve existing code rutvij is your guy.",
+    date: "May 2024",
+  },
+  {
+    name: "Klevis Doga",
+    role: "Software Engineer",
+    company: "Viral Nation",
+    text: "I had the pleasure of working closely with Rutvij, and I can confidently say he is an exceptional full stack developer who consistently delivers top-notch results. His technical expertise spans both front-end and back-end development, allowing him to contribute significantly to our projects from start to finish. Rutvij is a master at writing clean, efficient, and maintainable code. He has a knack for optimizing existing systems, resulting in improved performance and reliability. His ability to stay updated with the latest industry advancements and technologies demonstrates his commitment to continuous learning and excellence. Beyond his technical skills, Rutvij excels in communication and collaboration. He is always willing to share his knowledge and innovative ideas, fostering a collaborative and productive team environment.",
+    date: "May 2024",
+  },
+  {
+    name: "Muskan Dhakla",
+    role: "Software Engineer",
+    company: "Viral Nation",
+    text: "Rutvij is an outstanding full stack developer who consistently surpasses expectations to deliver exceptional results. He excels in communication, collaborating with the team and effectively presenting innovative ideas for better results. He is not only proficient in writing clean and efficient code but also excels in optimizing existing systems for improved performance. He remains updated on the most recent industry advancements demonstrating a commitment to continuous learning. I highly recommend Rutvij for a full stack developer role, knowing that he will bring dedication and innovation to the table.",
+    date: "December 2023",
+  },
+  {
+    name: "Javier Munster",
+    role: "Cloud Architect",
+    company: "Nanoleaf",
+    text: "Rutvij is a great coworker and great guy. He picked up our tech stack very fast and was making contributions right away. Highly recommended.",
+    date: "January 2023",
+  },
+  {
+    name: "Vinit Acharekar",
+    role: "Engineering Manager",
+    company: "Nanoleaf",
+    text: "Rutvij did a great job as Full-stack developer Intern at Nanoleaf during his term with us. He is a quick learner and adapted to our wide-spread tech-stack in no time. He has exceptional command over his front-end skills and did a great job at picking up nodejs and creating some useful tools for us for Data Analytics automations. He is really good with solving technical problems and coming up with quick solutions. He is a great listener which helps him understand the requirements without many problems. With his technical skills, problem solving abilities and knowledge of Big Data, he will be a great asset to any team that he joins.",
+    date: "December 2022",
+  },
 ];
 
 export const featuredEngineeringFocus = [
