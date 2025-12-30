@@ -1,13 +1,15 @@
 import { Navbar } from "@/components/Navbar";
 import { ResumeDownload } from "@/components/ResumeDownload";
 import { ContactForm } from "@/components/ContactForm";
+import { LazyReCaptchaProvider } from "@/components/LazyReCaptchaProvider";
 import { contactInfo } from "@/lib/data";
 
 export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white dark:bg-gray-900">
+      <LazyReCaptchaProvider>
+        <main className="min-h-screen bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="mb-8 sm:mb-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -86,6 +88,7 @@ export default function ContactPage() {
           </div>
         </div>
       </main>
+      </LazyReCaptchaProvider>
     </>
   );
 }

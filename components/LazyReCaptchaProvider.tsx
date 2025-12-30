@@ -1,13 +1,22 @@
 "use client";
 
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
-export function ReCaptchaProvider({ children }: { children: ReactNode }) {
+export function LazyReCaptchaProvider({ children }: { children: ReactNode }) {
+  const [shouldLoad, setShouldLoad] = useState(false);
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 
+  useEffect(() => {
+    // Only load reCAPTCHA when component mounts (user is on contact page)
+    setShouldLoad(true);
+  }, []);
+
   if (!siteKey) {
-    // If reCAPTCHA is not configured, just render children
+    return <>{children}</>;
+  }
+
+  if (!shouldLoad) {
     return <>{children}</>;
   }
 
@@ -27,7 +36,6 @@ export function ReCaptchaProvider({ children }: { children: ReactNode }) {
       </GoogleReCaptchaProvider>
     );
   } catch (error) {
-    // If reCAPTCHA fails to initialize, render children without it
     console.warn(
       "reCAPTCHA initialization failed, continuing without it:",
       error
@@ -35,3 +43,4 @@ export function ReCaptchaProvider({ children }: { children: ReactNode }) {
     return <>{children}</>;
   }
 }
+

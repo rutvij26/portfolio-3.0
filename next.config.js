@@ -3,8 +3,19 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  swcMinify: true,
+  compiler: {
+    // Only remove console.log in production, keep errors and warnings
+    removeConsole: process.env.NODE_ENV === "production" ? {
+      exclude: ["error", "warn"],
+    } : false,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
+  },
+  // Target modern browsers to avoid unnecessary polyfills
+  experimental: {
+    optimizePackageImports: ["react-icons"],
   },
   async headers() {
     return [

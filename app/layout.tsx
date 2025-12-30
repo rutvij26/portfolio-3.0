@@ -3,7 +3,6 @@ import { Roboto } from "next/font/google";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@/components/Analytics";
-import { ReCaptchaProvider } from "@/components/ReCaptchaProvider";
 import {
   GoogleTagManager,
   GoogleTagManagerNoscript,
@@ -96,6 +95,29 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Preconnect to external domains for faster loading */}
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://www.google-analytics.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://www.gstatic.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
         {/* <GoogleTagManager /> */}
         <GoogleAnalytics />
         <StructuredData />
@@ -107,11 +129,9 @@ export default function RootLayout({
       <body className={`${roboto.variable} font-sans antialiased`}>
         <GoogleTagManagerNoscript />
         <ThemeProvider>
-          <ReCaptchaProvider>
-            {children}
-            <Analytics />
-            <VercelAnalytics />
-          </ReCaptchaProvider>
+          {children}
+          <Analytics />
+          <VercelAnalytics />
         </ThemeProvider>
       </body>
     </html>

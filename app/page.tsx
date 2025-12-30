@@ -30,6 +30,7 @@ export default async function Home() {
             <p className="text-base sm:text-lg text-gray-500 dark:text-gray-500">
               {contactInfo.location}
             </p>
+            {/* LCP Element - Optimized for fast rendering */}
             <p className="text-base sm:text-lg max-w-2xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed px-4">
               {professionalSummary}
             </p>
