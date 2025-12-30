@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@/components/Analytics";
 import {
@@ -132,6 +133,7 @@ export default function RootLayout({
           {children}
           <Analytics />
           <VercelAnalytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
