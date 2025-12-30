@@ -54,4 +54,3 @@ describe("ProjectDetailPage", () => {
     expect(notFound).toHaveBeenCalled();
   });
 });
-

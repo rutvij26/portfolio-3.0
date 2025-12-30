@@ -18,4 +18,3 @@ describe("ResumePage", () => {
     expect(iframe).toHaveAttribute("src", "/api/resume");
   });
 });
-

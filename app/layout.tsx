@@ -8,6 +8,7 @@ import {
   GoogleTagManager,
   GoogleTagManagerNoscript,
 } from "@/components/GoogleTagManager";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { StructuredData } from "@/components/StructuredData";
 import "./globals.css";
 
@@ -95,7 +96,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <GoogleTagManager />
+        {/* <GoogleTagManager /> */}
+        <GoogleAnalytics />
         <StructuredData />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" />

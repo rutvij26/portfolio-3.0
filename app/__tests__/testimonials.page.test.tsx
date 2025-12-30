@@ -17,13 +17,17 @@ describe("TestimonialsPage", () => {
     testimonials.forEach((testimonial) => {
       expect(screen.getByText(testimonial.name)).toBeInTheDocument();
       // Testimonials text may be split across elements, use a more flexible matcher
-      expect(screen.getByText((content, element) => {
-        return element?.textContent?.includes(testimonial.text.substring(0, 50)) || false;
-      })).toBeInTheDocument();
+      expect(
+        screen.getByText((content, element) => {
+          return (
+            element?.textContent?.includes(testimonial.text.substring(0, 50)) ||
+            false
+          );
+        })
+      ).toBeInTheDocument();
       expect(
         screen.getByText(`${testimonial.role} @ ${testimonial.company}`)
       ).toBeInTheDocument();
     });
   });
 });
-
